@@ -15,7 +15,7 @@ type Enrollment struct {
 	User      *User        `json:"user,omitempty" gorm:"-"`                                 //OJO AQUI LE PONEMOS gorm - PARA QUE NO SEA CREE COMO FK (PQ SERAN BBDD SEPARADAS)
 	CourseID  string       `json:"course_id,omitempty" gorm:"type:char(36)"`                //COMO ES MICROSERVICIO Y BBDD SEPARADA ESTARÁ PERO NO COMO FK
 	Course    *Course      `json:"course,omitempty" gorm:"-"`                               //OJO AQUI LE PONEMOS gorm - PARA QUE NO SEA CREE COMO FK (PQ SERAN BBDD SEPARADAS)
-	Status    EnrollStatus `json:"status" gorm:"type:char(2)"`                              //Estado del curso
+	Status    EnrollStatus `json:"status" gorm:"type:char(2)"`                              //Estado del curso sera de tipo enrollstatus y cmo teine valores PREDEFINIDOS DEBERIA solo permitir estos
 	CreatedAt *time.Time   `json:"-"`                                                       // `json:"-"` PARA QUE NO se incluya este campo en las respuestas JSON
 	UpdatedAt *time.Time   `json:"-"`
 }
